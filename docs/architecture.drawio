@@ -1,0 +1,31 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" version="29.2.9">
+  <diagram name="Page-1" id="d44jWTQngFt31rwPiP19">
+    <mxGraphModel dx="724" dy="675" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="JOX0bnW6E6BwJIonPANU-5" edge="1" parent="1" source="JOX0bnW6E6BwJIonPANU-1" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" target="JOX0bnW6E6BwJIonPANU-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="JOX0bnW6E6BwJIonPANU-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;Mobile Browser&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="40" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="JOX0bnW6E6BwJIonPANU-6" edge="1" parent="1" source="JOX0bnW6E6BwJIonPANU-2" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;fontSize=12;startSize=8;endSize=8;" target="JOX0bnW6E6BwJIonPANU-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="JOX0bnW6E6BwJIonPANU-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;div&gt;React App&lt;/div&gt;&lt;div&gt;Today view&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="207" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="JOX0bnW6E6BwJIonPANU-7" edge="1" parent="1" source="JOX0bnW6E6BwJIonPANU-3" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;fontSize=12;startSize=8;endSize=8;" target="JOX0bnW6E6BwJIonPANU-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="JOX0bnW6E6BwJIonPANU-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;div&gt;.NET API&lt;/div&gt;&lt;div&gt;GET /api/today&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="373" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="JOX0bnW6E6BwJIonPANU-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;div&gt;SQLite DB&lt;/div&gt;&lt;div&gt;Goals&lt;/div&gt;&lt;div&gt;Recommendations&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="540" y="220" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
