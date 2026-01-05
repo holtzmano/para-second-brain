@@ -1,0 +1,25 @@
+.vs/
+# Build folders
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio workspace state
+.vs/VSWorkspaceState.json
+
+# Rider
+.idea/
+
+# Node
+node_modules/
+
+# Logs
+*.log
+
+# SQLite workspace files
+*.sqlite
