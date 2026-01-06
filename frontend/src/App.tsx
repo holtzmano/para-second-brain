@@ -1,14 +1,7 @@
-import { useEffect } from "react";
-import { fetchToday } from "./api/todayApi";
+import { Today } from "./pages/Today";
 
 function App() {
-    useEffect(() => {
-        fetchToday()
-            .then(data => console.log("TODAY API:", data))
-            .catch(err => console.error(err));
-    }, []);
-
-    return <div>Check console</div>;
+    return <Today />;
 }
 
 export default App;
