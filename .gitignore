@@ -1,5 +1,5 @@
+# Visual Studio
 .vs/
-# Build folders
 bin/
 obj/
 
@@ -8,9 +8,6 @@ obj/
 *.suo
 *.userosscache
 *.sln.docstates
-
-# Visual Studio workspace state
-.vs/VSWorkspaceState.json
 
 # Rider
 .idea/
