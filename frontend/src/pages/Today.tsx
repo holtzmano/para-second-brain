@@ -9,9 +9,31 @@ export function Today() {
         fetchToday().then(setData);
     }, []);
 
-    if (!data) {
-        return <div>Loading...</div>;
-    }
+    if (!data) return <div>Loading...</div>;
 
-    return <pre>{JSON.stringify(data, null, 2)}</pre>;
+    return (
+        <div style={{ padding: 16 }}>
+            <h1>Today</h1>
+
+            <section>
+                <h2>Goals</h2>
+                <ul>
+                    {data.goals.map(g => (
+                        <li key={g.id}>{g.title}</li>
+                    ))}
+                </ul>
+            </section>
+
+            <section>
+                <h2>Recommended Actions</h2>
+                <ul>
+                    {data.recommendedActions.map(a => (
+                        <li key={a.type}>
+                            {a.type} – {a.defaultMinutes} min
+                        </li>
+                    ))}
+                </ul>
+            </section>
+        </div>
+    );
 }
