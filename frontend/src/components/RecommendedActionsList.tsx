@@ -5,6 +5,10 @@ type Props = {
 };
 
 export function RecommendedActionsList({ actions }: Props) {
+    if (actions.length === 0) {
+        return <p>No recommended actions.</p>;
+    }
+
     return (
         <section>
             <h2>Recommended Actions</h2>

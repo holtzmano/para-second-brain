@@ -5,6 +5,10 @@ type Props = {
 };
 
 export function GoalsList({ goals }: Props) {
+    if (goals.length === 0) {
+        return <p>No goals for today.</p>;
+    }
+
     return (
         <section>
             <h2>Goals</h2>
