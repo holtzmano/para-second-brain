@@ -20,27 +20,27 @@ public sealed class TodayController : ControllerBase
             ],
             RecommendedActions =
             [
-                //new RecommendedActionDto
-                //{
-                //    Type = "Meditation",
-                //    DefaultMinutes = 10,
-                //    UseDefault = true,
-                //    ManualMinutes = null
-                //},
-                //new RecommendedActionDto
-                //{
-                //    Type = "Movement",
-                //    DefaultMinutes = 20,
-                //    UseDefault = true,
-                //    ManualMinutes = null
-                //},
-                //new RecommendedActionDto
-                //{
-                //    Type = "Reflection",
-                //    DefaultMinutes = 10,
-                //    UseDefault = true,
-                //    ManualMinutes = null
-                //}
+                new RecommendedActionDto
+                {
+                    Type = "Meditation",
+                    DefaultMinutes = 10,
+                    UseDefault = true,
+                    ManualMinutes = null
+                },
+                new RecommendedActionDto
+                {
+                    Type = "Movement",
+                    DefaultMinutes = 20,
+                    UseDefault = true,
+                    ManualMinutes = null
+                },
+                new RecommendedActionDto
+                {
+                    Type = "Reflection",
+                    DefaultMinutes = 10,
+                    UseDefault = true,
+                    ManualMinutes = null
+                }
             ]
         };
 

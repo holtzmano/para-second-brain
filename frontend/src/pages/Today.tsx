@@ -19,6 +19,34 @@ export function Today() {
         });
     }
 
+    function toggleActionTime(type: string) {
+        if (!data) return;
+
+        setData({
+            ...data,
+            recommendedActions: data.recommendedActions.map(a =>
+                a.type === type
+                    ? { ...a, useDefault: !a.useDefault }
+                    : a
+            )
+        });
+    }
+
+    function setManualMinutes(type: string, minutes: number) {
+        if (!data) return;
+
+        setData({
+            ...data,
+            recommendedActions: data.recommendedActions.map(a =>
+                a.type === type
+                    ? { ...a, manualMinutes: minutes }
+                    : a
+            )
+        });
+    }
+
+
+
     useEffect(() => {
         fetchToday().then(setData);
     }, []);
@@ -33,7 +61,12 @@ export function Today() {
             <p>{formattedDate}</p>
 
             <GoalsList goals={data.goals} onToggle={toggleGoal} />
-            <RecommendedActionsList actions={data.recommendedActions} />
+            <RecommendedActionsList
+                actions={data.recommendedActions}
+                onToggle={toggleActionTime}
+                onChangeMinutes={setManualMinutes}
+            />
+
         </div>
     );
 }
