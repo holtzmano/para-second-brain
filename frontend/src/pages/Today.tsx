@@ -5,15 +5,19 @@ import { GoalsList } from "../components/GoalsList";
 import { RecommendedActionsList } from "../components/RecommendedActionsList";
 
 
-// Plan (pseudocode):
-// 1. Keep state `data` initialized to null.
-// 2. Fetch today's data in useEffect and set it.
-// 3. If `data` is null, return a loading UI early.
-// 4. Only after confirming `data` is non-null, compute `formattedDate`.
-// 5. Render the page using `formattedDate`, `data.goals`, and `data.recommendedActions`.
-
 export function Today() {
     const [data, setData] = useState<TodayResponse | null>(null);
+
+    function toggleGoal(id: string) {
+        if (!data) return;
+
+        setData({
+            ...data,
+            goals: data.goals.map(g =>
+                g.id === id ? { ...g, isDone: !g.isDone } : g
+            )
+        });
+    }
 
     useEffect(() => {
         fetchToday().then(setData);
@@ -28,7 +32,7 @@ export function Today() {
             <h1>Today</h1>
             <p>{formattedDate}</p>
 
-            <GoalsList goals={data.goals} />
+            <GoalsList goals={data.goals} onToggle={toggleGoal} />
             <RecommendedActionsList actions={data.recommendedActions} />
         </div>
     );

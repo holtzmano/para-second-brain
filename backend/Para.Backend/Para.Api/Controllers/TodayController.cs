@@ -15,7 +15,7 @@ public sealed class TodayController : ControllerBase
             Date = DateOnly.FromDateTime(DateTime.UtcNow),
             Goals =
             [
-                //new GoalDto { Id = "g1", Title = "Finish Step 4", IsDone = false },
+                new GoalDto { Id = "g1", Title = "Finish Step 4", IsDone = false },
                 //new GoalDto { Id = "g2", Title = "Move body", IsDone = false }
             ],
             RecommendedActions =
