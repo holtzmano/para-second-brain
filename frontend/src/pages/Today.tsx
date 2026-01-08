@@ -1,9 +1,9 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 import { useEffect, useState } from "react";
 import { fetchToday } from "../api/todayApi";
-import type { TodayResponse } from "../types/today";
+import type { TodayResponse, RecommendedAction } from "../types/today";
 import { GoalsList } from "../components/GoalsList";
 import { RecommendedActionsList } from "../components/RecommendedActionsList";
-
 
 export function Today() {
     const [data, setData] = useState<TodayResponse | null>(null);
@@ -45,11 +45,28 @@ export function Today() {
         });
     }
 
+    function getEffectiveMinutes(a: RecommendedAction) {
+        return a.useDefault
+            ? a.defaultMinutes
+            : a.manualMinutes ?? a.defaultMinutes;
+    }
 
-
+    // Load on first render
     useEffect(() => {
-        fetchToday().then(setData);
+        const saved = localStorage.getItem("today");
+        if (saved) {
+            setData(JSON.parse(saved));
+        } else {
+            fetchToday().then(setData);
+        }
     }, []);
+
+    // Persist on change
+    useEffect(() => {
+        if (data) {
+            localStorage.setItem("today", JSON.stringify(data));
+        }
+    }, [data]);
 
     if (!data) return <div>Loading...</div>;
 
@@ -60,13 +77,19 @@ export function Today() {
             <h1>Today</h1>
             <p>{formattedDate}</p>
 
-            <GoalsList goals={data.goals} onToggle={toggleGoal} />
+            <GoalsList
+                goals={data.goals}
+                onToggle={toggleGoal}
+            />
+
             <RecommendedActionsList
-                actions={data.recommendedActions}
+                actions={data.recommendedActions.map(a => ({
+                    ...a,
+                    effectiveMinutes: getEffectiveMinutes(a)
+                }))}
                 onToggle={toggleActionTime}
                 onChangeMinutes={setManualMinutes}
             />
-
         </div>
     );
 }
